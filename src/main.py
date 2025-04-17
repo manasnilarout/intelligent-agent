@@ -6,6 +6,30 @@ import os
 def parse_sql_query(question):
     """Parse the question to extract SQL-related parameters"""
     
+    # Check if the question is asking about PostgreSQL but should use agent mode
+    if "postgresql" in question.lower() or "postgres" in question.lower():
+        # Complex PostgreSQL questions should use agent mode
+        if any(phrase in question.lower() for phrase in [
+            "tell me about", "analyze", "what is", "how many", "show me", 
+            "compare", "find", "calculate", "which", "where", "who", "when",
+            "statistics", "summary", "report", "aggregate"
+        ]):
+            return {"query": question, "agent_mode": True}
+    
+    # Check for PostgreSQL info queries that should use direct mode
+    postgres_info_patterns = {
+        "tables": [r"list (all )?postgres(ql)? tables", r"show (all )?postgres(ql)? tables"],
+        "schemas": [r"list (all )?postgres(ql)? schemas", r"show (all )?postgres(ql)? schemas"],
+        "functions": [r"list (all )?postgres(ql)? functions", r"show (all )?postgres(ql)? functions"],
+        "users": [r"list (all )?postgres(ql)? users", r"show (all )?postgres(ql)? users"],
+        "size": [r"(show|list|get) (the )?size of postgres(ql)? tables", r"postgres(ql)? table sizes"]
+    }
+    
+    for info_type, patterns in postgres_info_patterns.items():
+        for pattern in patterns:
+            if re.search(pattern, question.lower()):
+                return {"postgres_info": info_type, "agent_mode": False}
+    
     # Example patterns to look for in questions
     list_tables_patterns = [
         r"what tables (are available|do we have)",
@@ -59,7 +83,13 @@ def main():
         if action_name == "Execute SQL queries on a database":
             # Parse the question to get SQL parameters
             params = parse_sql_query(question)
-            print(f"Using SQL {'agent' if params.get('agent_mode', True) else 'direct'} mode")
+            
+            # Determine and show mode
+            if "postgres_info" in params:
+                print(f"Using PostgreSQL info mode: {params['postgres_info']}")
+            else:
+                print(f"Using SQL {'agent' if params.get('agent_mode', True) else 'direct'} mode")
+                
             result = action.execute(**params)
             print(f"\nResult: {result}")
             
