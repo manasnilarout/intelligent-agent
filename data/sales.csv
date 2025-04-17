@@ -1,0 +1,15 @@
+Date,Product,Category,Region,SalesAmount,Quantity
+2023-01-15,Laptop,Electronics,North,1200.50,2
+2023-01-16,Desk Chair,Furniture,South,350.99,3
+2023-01-18,Smartphone,Electronics,East,899.99,5
+2023-01-20,Coffee Table,Furniture,West,250.00,1
+2023-01-22,Tablet,Electronics,North,599.99,4
+2023-01-23,Bookshelf,Furniture,South,180.50,2
+2023-01-25,Headphones,Electronics,East,89.99,10
+2023-01-27,Office Desk,Furniture,West,450.00,2
+2023-01-28,Monitor,Electronics,North,320.75,3
+2023-01-30,Sofa,Furniture,South,1100.00,1
+2023-02-02,Laptop,Electronics,East,1299.99,3
+2023-02-05,Dining Table,Furniture,West,599.00,2
+2023-02-07,Smartphone,Electronics,North,849.99,6
+2023-02-10,Office Chair,Furniture,South,189.99,4 

@@ -1,0 +1,6 @@
+langchain==0.3.23
+langchain-community==0.3.21
+langchain-experimental==0.3.4
+langchain-openai==0.3.14
+pandas==2.2.3
+python-decouple==3.8

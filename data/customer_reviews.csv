@@ -1,0 +1,11 @@
+ReviewID,Date,CustomerName,ProductID,ProductName,Rating,ReviewText,Sentiment
+1001,2023-02-01,Alice Brown,P123,Ultra HD Smart TV,4.5,"Great picture quality and smart features work well. Setup was easy, but the remote feels a bit flimsy.",Positive
+1002,2023-02-03,John Smith,P124,Wireless Headphones,3.0,"Sound quality is decent, but battery life is disappointing. Expected more for the price.",Neutral
+1003,2023-02-05,Maria Garcia,P125,Coffee Maker,5.0,"Absolutely love this coffee maker! Makes perfect coffee every time and looks beautiful on my counter.",Positive
+1004,2023-02-07,Robert Johnson,P126,Fitness Tracker,2.0,"Inaccurate step count and the app crashes frequently. Would not recommend.",Negative
+1005,2023-02-08,Emma Wilson,P127,Bluetooth Speaker,4.0,"Good sound for the size. Battery lasts all day. Water resistance works as advertised.",Positive
+1006,2023-02-10,David Lee,P123,Ultra HD Smart TV,1.5,"Arrived with a cracked screen and customer service was unhelpful. Very disappointed.",Negative
+1007,2023-02-12,Sofia Martinez,P128,Robot Vacuum,4.5,"Cleans extremely well and navigates around furniture perfectly. A bit noisy but worth it.",Positive
+1008,2023-02-15,James Taylor,P129,Tablet Pro,3.5,"Good performance but battery life could be better. Screen is excellent for drawing.",Neutral
+1009,2023-02-17,Olivia Chen,P130,Blender Set,5.0,"Powerful motor handles everything I throw at it. Easy to clean and looks professional.",Positive
+1010,2023-02-20,Michael Davis,P131,Gaming Console,4.0,"Great graphics and game selection. Loading times could be faster but overall very satisfied.",Positive 
